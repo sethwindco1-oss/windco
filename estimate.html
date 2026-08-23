@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request an Estimate — WindCo Window Washing</title>
+  <meta name="description" content="Get a free estimate for residential or commercial window washing in Thornton, CO. We'll respond within 1 business day." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #0EA5E9;
+      --green-light: #E0F2FE;
+      --green-mid: #0284C7;
+      --green-dark: #0C4A6E;
+      --text: #1a1a1a;
+      --text-muted: #6b7280;
+      --border: rgba(0,0,0,0.1);
+      --border-mid: rgba(0,0,0,0.18);
+      --bg: #ffffff;
+      --bg-alt: #f8f9f7;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span { color: var(--green); }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav ul li a {
+      font-size: 14px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: #fff !important;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .page-header {
+      padding: 4rem 2.5rem 2.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.4px;
+    }
+
+    .page-header h1 em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .page-header p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .estimate-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2.5rem 5rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 14px;
+      border: 0.5px solid var(--border-mid);
+      border-radius: var(--radius);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(14,165,233,0.12);
+    }
+
+    .form-group textarea { height: 100px; resize: none; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      margin: 28px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: opacity 0.2s, transform 0.1s;
+      width: 100%;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .confirm-msg {
+      display: none;
+      background: var(--green-light);
+      color: var(--green-dark);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 14px;
+      margin-top: 14px;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .estimate-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .sidebar-card {
+      background: var(--bg-alt);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 14px;
+    }
+
+    .sidebar-card h3 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-card p,
+    .sidebar-card li {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .sidebar-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar-card ul li {
+      padding: 6px 0;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .sidebar-card ul li:last-child { border-bottom: none; }
+
+    .check { color: var(--green); font-size: 14px; flex-shrink: 0; }
+
+    .contact-block {
+      margin-top: 6px;
+    }
+
+    .contact-block a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text);
+      padding: 6px 0;
+    }
+
+    .contact-block a:hover { color: var(--green); }
+
+    footer {
+      padding: 2rem 2.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .footer-logo span { color: var(--green); }
+
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { color: var(--text-muted); }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      nav ul { gap: 14px; }
+      nav ul li:not(:last-child) { display: none; }
+
+      .page-header { padding: 3rem 1.25rem 2rem; }
+      .page-header h1 { font-size: 30px; }
+
+      .estimate-wrap {
+        grid-template-columns: 1fr;
+        padding: 0 1.25rem 4rem;
+      }
+
+      .estimate-sidebar { position: static; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Company Logo" style="height:65px;width:auto;display:inline-block;vertical-align:middle;margin-top:16px;" onerror="this.style.display='none';document.querySelector('.logo-text').style.display='inline';" />
+      <span class="logo-text" style="display:none;">Wind<span>Co</span></span>
+    </a>
+    <ul>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#booking">Booking</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="estimate.html">Get estimate</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Request a free <em>estimate</em></h1>
+    <p>Tell us about your property and we'll get back to you with a detailed quote within 1 business day — no obligation.</p>
+  </div>
+
+  <div class="estimate-wrap">
+
+    <div>
+      <form id="estimate-form" method="POST" action="https://formspree.io/f/mzdqeqlk">
+
+        <p class="section-label">Your details</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="e-name">Full name</label>
+            <input type="text" id="e-name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+          </div>
+          <div class="form-group">
+            <label for="e-phone">Phone</label>
+            <input type="tel" id="e-phone" name="phone" placeholder="+1 720 000 0000" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="e-email">Email address</label>
+          <input type="email" id="e-email" name="email" placeholder="jane@example.com" autocomplete="email" required />
+        </div>
+
+        <p class="section-label">Property details</p>
+
+        <div class="form-group">
+          <label for="e-address">Property address</label>
+          <input type="text" id="e-address" name="address" placeholder="123 Main St, Thornton, CO" autocomplete="street-address" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="e-type">Property type</label>
+            <select id="e-type" name="property_type" required>
+              <option value="">Select type</option>
+              <option>Single-family home</option>
+              <option>Townhouse / condo</option>
+              <option>Multi-unit residential</option>
+              <option>Retail / storefront</option>
+              <option>Office building</option>
+              <option>Other commercial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="e-stories">Number of stories</label>
+            <select id="e-stories" name="stories">
+              <option value="">Select</option>
+              <option>1 story</option>
+              <option>2 stories</option>
+              <option>3 stories</option>
+              <option>4+ stories</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="e-windows">Approx. number of windows</label>
+            <select id="e-windows" name="window_count">
+              <option value="">Select range</option>
+              <option>1–10</option>
+              <option>11–20</option>
+              <option>21–40</option>
+              <option>41–60</option>
+              <option>60+</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="e-service">Service needed</label>
+            <select id="e-service" name="service" required>
+              <option value="">Select</option>
+              <option>Exterior only</option>
+              <option>Interior only</option>
+              <option>Interior + exterior</option>
+              <option>Screens (add-on)</option>
+              <option>Tracks &amp; frames (add-on)</option>
+              <option>Multiple services — advise me</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="section-label">Additional info</p>
+
+        <div class="form-group">
+          <label for="e-last">Last professionally cleaned</label>
+          <select id="e-last" name="last_cleaned">
+            <option value="">Select</option>
+            <option>Within 6 months</option>
+            <option>6–12 months ago</option>
+            <option>1–2 years ago</option>
+            <option>More than 2 years ago</option>
+            <option>Never / not sure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="e-notes">Additional notes</label>
+          <textarea id="e-notes" name="notes" placeholder="Hard-to-reach windows, pets on site, access codes, specific concerns..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" id="est-btn">Send estimate request</button>
+
+        <div class="confirm-msg" id="est-confirm">
+          ✅ <span>Estimate request received! We'll review your details and respond within 1 business day.</span>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="estimate-sidebar">
+      <div class="sidebar-card">
+        <h3>What's included in every estimate</h3>
+        <ul>
+          <li><span class="check">✓</span> Itemised window-by-window pricing</li>
+          <li><span class="check">✓</span> Screens, tracks &amp; frames priced separately</li>
+          <li><span class="check">✓</span> Recurring plan discount applied automatically</li>
+          <li><span class="check">✓</span> No obligation — quote is free</li>
+          <li><span class="check">✓</span> Response within 1 business day</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Prefer to talk?</h3>
+        <div class="contact-block">
+          <a href="tel:+17206943240">📞 +1 720 694 3240</a>
+          <a href="mailto:coheng578@gmail.com">✉️ coheng578@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Service area</h3>
+        <p>We serve all of Colorado.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Company Logo" style="height:56px;width:auto;display:inline-block;vertical-align:middle;margin-top:12px;" onerror="this.outerHTML='Wind<span style=\'color:var(--green)\'>Co</span>';" />
+    </div>
+    <div>© 2026 WindCo Window Washing · Thornton, CO</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('estimate-form');
+    form.addEventListener('submit', function() {
+      const btn = document.getElementById('est-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+    });
+
+  </script>
+
+</body>
+</html>

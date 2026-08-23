@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residential Window Washing — WindCo Thornton, CO</title>
+  <meta name="description" content="Professional residential window washing in Thornton, CO. Interior and exterior cleaning, with screens, tracks, and frames available as add-ons. Custom quotes, same-week availability." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #0EA5E9;
+      --blue-light: #E0F2FE;
+      --blue-mid: #0284C7;
+      --blue-dark: #0C4A6E;
+      --text: #1a1a1a;
+      --text-muted: #6b7280;
+      --border: rgba(0,0,0,0.1);
+      --border-mid: rgba(0,0,0,0.18);
+      --bg: #ffffff;
+      --bg-alt: #f8f9f7;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; letter-spacing: -0.5px; }
+    .logo span { color: var(--blue); }
+
+    nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
+    nav ul li a { font-size: 14px; color: var(--text-muted); transition: color 0.2s; }
+    nav ul li a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--blue) !important; color: #fff !important;
+      padding: 9px 20px; border-radius: var(--radius);
+      font-size: 14px; font-weight: 500;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    .hero {
+      padding: 5rem 2.5rem 4rem;
+      background: linear-gradient(160deg, var(--blue-light) 0%, #ffffff 60%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .breadcrumb {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: var(--blue); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--blue); color: #fff;
+      padding: 13px 28px; border-radius: var(--radius);
+      font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif;
+      border: none; cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-outline {
+      border: 1px solid var(--border-mid); color: var(--text);
+      padding: 13px 28px; border-radius: var(--radius);
+      font-size: 14px; font-weight: 500;
+      transition: border-color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+    .trust-bar {
+      display: flex; justify-content: center; gap: 2rem;
+      flex-wrap: wrap;
+      padding: 1rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      background: var(--bg);
+    }
+
+    .trust-item { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .trust-item span { color: var(--blue); font-size: 15px; }
+
+    .section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+    .section-alt { background: var(--bg-alt); padding: 5rem 2.5rem; }
+    .section-alt .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--blue); margin-bottom: 0.5rem;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px; font-weight: 500; letter-spacing: -0.3px;
+      margin-bottom: 0.75rem; line-height: 1.25;
+    }
+
+    .section-sub { font-size: 15px; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 520px; }
+
+    .included-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    }
+
+    .included-card {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.5rem;
+    }
+
+    .included-icon {
+      width: 42px; height: 42px; background: var(--blue-light);
+      border-radius: var(--radius); display: flex; align-items: center;
+      justify-content: center; font-size: 20px; margin-bottom: 14px;
+    }
+
+    .included-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+    .included-card p { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+    .pricing-card {
+      border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem;
+      position: relative; background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .pricing-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 8px 24px rgba(14,165,233,0.1);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--blue);
+      background: linear-gradient(160deg, var(--blue-light) 0%, #fff 80%);
+    }
+
+    .featured-badge {
+      position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: #fff;
+      font-size: 11px; font-weight: 500; padding: 3px 12px;
+      border-radius: 20px; white-space: nowrap;
+    }
+
+    .pricing-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+
+    .pricing-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px; font-weight: 500;
+      color: var(--blue); margin: 10px 0 4px;
+      line-height: 1;
+    }
+
+    .pricing-price span { font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text-muted); }
+
+    .pricing-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.55; }
+
+    .pricing-card ul { list-style: none; }
+    .pricing-card ul li {
+      font-size: 13px; color: var(--text-muted); padding: 5px 0;
+      border-bottom: 0.5px solid var(--border); display: flex; align-items: flex-start; gap: 7px;
+    }
+    .pricing-card ul li:last-child { border-bottom: none; }
+    .check { color: var(--blue); flex-shrink: 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 10px;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-alt);
+    }
+
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    .gallery-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      color: #fff; font-size: 12px; padding: 20px 14px 10px;
+      opacity: 0; transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+    .review-card {
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.5rem;
+    }
+
+    .stars { color: #f59e0b; font-size: 14px; margin-bottom: 10px; letter-spacing: 1px; }
+
+    .review-text {
+      font-size: 14px; color: var(--text); line-height: 1.7;
+      margin-bottom: 1rem; font-style: italic;
+    }
+
+    .reviewer { display: flex; align-items: center; gap: 10px; }
+
+    .reviewer-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 500; color: var(--blue-dark);
+      flex-shrink: 0;
+    }
+
+    .reviewer-name { font-size: 13px; font-weight: 500; }
+    .reviewer-location { font-size: 12px; color: var(--text-muted); }
+
+    footer {
+      padding: 2rem 2.5rem; border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: var(--text-muted); flex-wrap: wrap; gap: 1rem;
+    }
+
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 500; }
+    .footer-logo span { color: var(--blue); }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 900px) {
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      nav ul { gap: 14px; }
+      nav ul li:not(:last-child) { display: none; }
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      .hero h1 { font-size: 32px; }
+      .section { padding: 3.5rem 1.25rem; }
+      .section-alt { padding: 3.5rem 1.25rem; }
+      .included-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-item:first-child { grid-column: 1; grid-row: 1; height: 240px; }
+      .gallery-item { height: 180px; }
+      footer { flex-direction: column; align-items: flex-start; padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Company Logo" style="height:65px;width:auto;display:inline-block;vertical-align:middle;margin-top:16px;" onerror="this.style.display='none';document.querySelector('.logo-text').style.display='inline';" />
+      <span class="logo-text" style="display:none;">Wind<span>Co</span></span>
+    </a>
+    <ul>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="commercial.html">Commercial</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a class="nav-cta" href="estimate.html">Get estimate</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &rsaquo; Residential
+    </div>
+    <h1>Crystal-clear windows for your <em>home</em></h1>
+    <p>Interior and exterior window cleaning for homes of all sizes in Colorado. Screens, tracks, and frames available as optional add-ons — every quote is custom to your property.</p>
+    <div class="hero-actions">
+      <a href="index.html#booking" class="btn-primary">Book now</a>
+      <a href="estimate.html" class="btn-outline">Get a free estimate</a>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item"><span>✓</span> Fully insured</div>
+    <div class="trust-item"><span>✓</span> Eco-friendly solutions</div>
+    <div class="trust-item"><span>✓</span> Same-week availability</div>
+    <div class="trust-item"><span>✓</span> 1 week re-clean guarantee</div>
+  </div>
+
+  <section class="section">
+    <p class="section-label">What we do</p>
+    <h2 class="section-heading">Our residential services</h2>
+    <p class="section-sub">Each service is priced separately — you choose exactly what you need. Every quote is custom to your home.</p>
+
+    <div class="included-grid">
+      <div class="included-card">
+        <div class="included-icon">🪟</div>
+        <h3>Exterior glass</h3>
+        <p>Outside of every window cleaned streak-free using purified water and professional-grade squeegees.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-icon">🏠</div>
+        <h3>Interior glass</h3>
+        <p>Inside surfaces cleaned to the same streak-free standard. Available as an add-on to exterior service or booked separately.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-icon">🔲</div>
+        <h3>Screens — add-on</h3>
+        <p>Window screens removed, hand-washed, dried, and reinstalled. Available at an additional cost per screen.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-icon">⬛</div>
+        <h3>Tracks &amp; frames — add-on</h3>
+        <p>Window tracks vacuumed and wiped down. Frames cleaned of dust, grime, and oxidation. Priced separately.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-icon">🛡️</div>
+        <h3>Fully insured</h3>
+        <p>All technicians are insured and background-checked. Your property is protected on every visit.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-icon">🔁</div>
+        <h3>Re-clean guarantee</h3>
+        <p>Not 100% happy? Contact us within 1 week and we'll return to fix it — free of charge.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="section-inner">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-heading">Every quote is custom</h2>
+      <p class="section-sub">Pricing depends on your home's window count, stories, and which services you need. Request a free estimate and we'll get back to you within 1 business day.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Exterior cleaning</h3>
+          <div class="pricing-price">Custom <span>quote</span></div>
+          <p class="pricing-desc">Outside glass cleaned streak-free. Priced based on window count and access.</p>
+          <ul>
+            <li><span class="check">✓</span> All exterior glass</li>
+            <li><span class="check">✓</span> Single or multi-story</li>
+            <li><span class="check">✓</span> Same-week availability</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="featured-badge">Most popular</div>
+          <h3>Interior + exterior</h3>
+          <div class="pricing-price">Custom <span>quote</span></div>
+          <p class="pricing-desc">Both sides of every window — interior and exterior. Priced separately from screens and tracks.</p>
+          <ul>
+            <li><span class="check">✓</span> All interior glass</li>
+            <li><span class="check">✓</span> All exterior glass</li>
+            <li><span class="check">✓</span> Priority scheduling</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Add-ons</h3>
+          <div class="pricing-price">Custom <span>quote</span></div>
+          <p class="pricing-desc">Screens, tracks, and frames are each available as separate add-ons at additional cost.</p>
+          <ul>
+            <li><span class="check">✓</span> Screen wash &amp; reinstall</li>
+            <li><span class="check">✓</span> Track vacuuming &amp; wipe</li>
+            <li><span class="check">✓</span> Frame cleaning</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top:2rem;font-size:14px;color:var(--text-muted);text-align:center;">
+        Not sure what you need? <a href="estimate.html" style="color:var(--blue);">Get a free estimate</a> and we'll walk you through the options.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="section-inner">
+      <p class="section-label">Reviews</p>
+      <h2 class="section-heading">What Thornton homeowners say</h2>
+      <p class="section-sub">Real reviews from local customers. We don't edit or cherry-pick them.</p>
+      <div style="margin-bottom:2rem;">
+        <a href="https://g.page/r/Cajfdd5Yqf6oEBM/review" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:0.5px solid var(--border-mid);border-radius:var(--radius);padding:10px 18px;font-size:14px;font-weight:500;color:var(--text);transition:border-color 0.2s;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Leave us a Google review
+        </a>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"They did a great job!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">DB</div>
+            <div>
+              <div class="reviewer-name">Denise Burtzlaff</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Excellent job ! Seth was great and I would highly recommend WindCO"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">T</div>
+            <div>
+              <div class="reviewer-name">Tom</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"WindCO Limited was prompt, professional, and ensures our window cleaning needs were met to satisfaction. I highly recommend this local family business!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">MS</div>
+            <div>
+              <div class="reviewer-name">Micheal Storer</div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <section style="padding: 5rem 2.5rem; text-align: center; background: var(--blue-dark);">
+    <p style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;">Ready to get started?</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:34px;color:#fff;font-weight:500;margin-bottom:1rem;letter-spacing:-0.3px;">Book your residential clean today</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:2rem;max-width:440px;margin-left:auto;margin-right:auto;">Same-week availability. Every quote is custom — no obligation.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html#booking" class="btn-primary" style="background:#fff;color:var(--blue-dark);">Book now</a>
+      <a href="estimate.html" style="border:1px solid rgba(255,255,255,0.3);color:#fff;padding:13px 28px;border-radius:var(--radius);font-size:14px;font-weight:500;">Free estimate</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Company Logo" style="height:56px;width:auto;display:inline-block;vertical-align:middle;margin-top:12px;" onerror="this.outerHTML='Wind<span style=&quot;color:var(--blue)&quot;>Co</span>';" />
+    </div>
+    <div>© 2026 WindCo Window Washing · Thornton, CO</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>

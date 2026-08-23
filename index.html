@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WindCo — Window Washing</title>
+  <meta name="description" content="Professional window washing for residential and commercial properties in Thornton, CO. Book online, pay securely." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #0EA5E9;
+      --green-light: #E0F2FE;
+      --green-mid: #0284C7;
+      --green-dark: #0C4A6E;
+      --text: #1a1a1a;
+      --text-muted: #6b7280;
+      --border: rgba(0,0,0,0.1);
+      --border-mid: rgba(0,0,0,0.18);
+      --bg: #ffffff;
+      --bg-alt: #f8f9f7;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span { color: var(--green); }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav ul li a {
+      font-size: 14px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: #fff !important;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.88; }
+
+    .hero {
+      padding: 5rem 2.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .hero-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: opacity 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      border: 0.5px solid var(--border-mid);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .btn-outline:hover { background: var(--bg-alt); }
+
+    .hero-card {
+      background: var(--bg-alt);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .badge::before { content: "✦"; font-size: 10px; }
+
+    .hero-card .tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 10px;
+      text-align: center;
+    }
+
+    .stat-card .num {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .stat-card .lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    section { padding: 4rem 2.5rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-alt { background: var(--bg-alt); }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.3px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .service-card:hover { border-color: var(--green); }
+
+    .service-card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(14,165,233,0.12);
+      border-color: var(--green);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--green-light);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .price-tag {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 14px;
+      border: 0.5px solid var(--border-mid);
+      border-radius: var(--radius);
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(14,165,233,0.12);
+    }
+
+    .form-group textarea { height: 90px; resize: none; }
+
+    .booking-info {
+      background: var(--bg-alt);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+
+    .booking-info h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-list { list-style: none; }
+
+    .step-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 14px;
+    }
+
+    .step-list li:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-text strong { display: block; font-weight: 500; margin-bottom: 2px; }
+    .step-text span { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    .payment-note {
+      margin-top: 1.25rem;
+      padding: 12px 14px;
+      background: var(--green-light);
+      border-radius: var(--radius);
+      font-size: 13px;
+      color: var(--green-dark);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .contact-row {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .contact-row p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-row a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .contact-row a:hover { color: var(--green); }
+
+    .confirm-msg {
+      display: none;
+      background: var(--green-light);
+      color: var(--green-dark);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 14px;
+      margin-top: 14px;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 2rem 2.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .footer-logo span { color: var(--green); }
+
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { color: var(--text-muted); }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      nav ul { gap: 14px; }
+      nav ul li:not(:last-child) { display: none; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.25rem 2.5rem;
+        gap: 2rem;
+      }
+
+      .hero-text h1 { font-size: 36px; }
+
+      section { padding: 3rem 1.25rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .booking-grid { grid-template-columns: 1fr; }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 1.25rem;
+      }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-text { animation: fadeUp 0.55s ease both; }
+    .hero-card  { animation: fadeUp 0.55s ease 0.12s both; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="logo1.png" alt="Company Logo" class="logo-img" style="height:48px;width:auto;display:inline-block;vertical-align:middle;" onerror="this.style.display='none';document.querySelector('.logo-text').style.display='inline';" />
+      <span class="logo-text" style="display:none;">Wind<span>Co</span></span>
+    </a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="estimate.html">Estimate</a></li>
+      <li><a class="nav-cta" href="#booking">Book now</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Crystal clear windows,<br><em>every time.</em></h1>
+      <p>Professional window washing for residential and commercial properties in Colorado. Trusted by numerous local homeowners.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#booking">Schedule a clean</a>
+        <a class="btn-outline" href="#services">View services</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="badge">Colorado</div>
+      <p class="tagline">Same-week availability · No deposits · Pay in person after the job</p>
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="num">5★</div>
+          <div class="lbl">Google rating</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">1 week</div>
+          <div class="lbl">Re-clean guarantee</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">100%</div>
+          <div class="lbl">Insured</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="section-alt" id="services">
+    <div class="section-inner">
+      <p class="section-title">Our services</p>
+      <p class="section-sub">Transparent pricing. No hidden fees.</p>
+      <div class="services-grid">
+        <a href="residential.html" class="service-card service-card-link">
+          <div class="service-icon">🏠</div>
+          <h3>Residential</h3>
+          <p>Interior or exterior window cleaning for homes of all sizes. Screens, tracks, and frames available as add-ons.</p>
+          <div class="price-tag">Custom quote →</div>
+        </a>
+        <a href="commercial.html" class="service-card service-card-link">
+          <div class="service-icon">🏢</div>
+          <h3>Commercial</h3>
+          <p>Storefronts, offices, and multi-story buildings. Flexible scheduling to minimize disruption to your business.</p>
+          <div class="price-tag">Custom quote &rarr;</div>
+        </a>
+        <div class="service-card">
+          <div class="service-icon">🔄</div>
+          <h3>Recurring plans</h3>
+          <p>Monthly, bi-monthly, or quarterly service plans with priority scheduling. Save 15% versus one-time bookings.</p>
+          <div class="price-tag">Save 15%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="section-inner">
+      <p class="section-title">Book a service</p>
+      <p class="section-sub">Takes less than 2 minutes. Pay in person after your clean.</p>
+      <div class="booking-grid">
+
+        <div>
+          <form name="booking" method="POST" action="https://formspree.io/f/xkoezvla" id="booking-form">
+
+            <div class="form-group">
+              <label for="f-name">Full name</label>
+              <input type="text" id="f-name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+            </div>
+            <div class="form-group">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" placeholder="jane@example.com" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="f-phone">Phone</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="(720) 555-0100" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="f-address">Property address</label>
+              <input type="text" id="f-address" name="address" placeholder="123 Main St, Thornton, CO" autocomplete="street-address" />
+            </div>
+            <div class="form-group">
+              <label for="f-service">Service type</label>
+              <select id="f-service" name="service" required>
+                <option value="">Select a service</option>
+                <option>Residential — exterior only</option>
+                <option>Residential — interior + exterior</option>
+                <option>Commercial — storefront</option>
+                <option>Commercial — multi-story</option>
+                <option>Recurring plan — monthly</option>
+                <option>Recurring plan — bi-monthly</option>
+                <option>Recurring plan — quarterly</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="f-date">Preferred date</label>
+              <input type="date" id="f-date" name="date" />
+            </div>
+            <div class="form-group">
+              <label for="f-notes">Notes (optional)</label>
+              <textarea id="f-notes" name="notes" placeholder="Property size, access notes, special requests..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;font-size:15px;padding:14px;" id="submit-btn">
+              Request booking
+            </button>
+            <div class="confirm-msg" id="confirm-msg">
+              ✅ <span>Booking request sent! We'll confirm your appointment within 2 hours.</span>
+            </div>
+          </form>
+        </div>
+
+        <div class="booking-info" id="contact">
+          <h3>How it works</h3>
+          <ul class="step-list">
+            <li>
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Request a booking</strong><span>Fill out the form. We confirm your slot within 2 hours.</span></div>
+            </li>
+            <li>
+              <div class="step-num">2</div>
+              <div class="step-text"><strong>We do the work</strong><span>Our team arrives on time and completes the job to spec.</span></div>
+            </li>
+            <li>
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Pay in person</strong><span>After the job is done, pay by Venmo, cash, or credit/debit card — no online payment required.</span></div>
+            </li>
+          </ul>
+          <div class="payment-note">
+            💵 <span>We accept <strong>Venmo</strong>, <strong>cash</strong>, and <strong>credit/debit card</strong> — paid in person after the job is done.</span>
+          </div>
+          <div class="contact-row">
+            <p>Questions? Reach us directly:</p>
+            <a href="tel:+17206943240">📞 +1 720 694 3240</a>
+            <a href="mailto:coheng578@gmail.com">✉️ coheng578@gmail.com</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="logo1.png" alt="Company Logo" style="height:38px;width:auto;" onerror="this.outerHTML='Wind<span style=\'color:var(--green)\'>Co</span>';" />
+    </div>
+    <div>© 2026 WindCo Window Washing · Thornton, CO</div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="estimate.html">Get Estimate</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('booking-form');
+    form.addEventListener('submit', function(e) {
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+    });
+
+    const dateInput = document.getElementById('f-date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+    }
+  </script>
+
+
+
+</body>
+</html>
