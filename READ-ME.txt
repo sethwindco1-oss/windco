@@ -1,0 +1,34 @@
+WINDCO WEBSITE - WHAT EACH FILE DOES
+====================================
+
+index.html ............ The page skeleton: all the words and sections for every tab
+                        (Holiday landing page, Family Gift, Home, About, Services,
+                        Plans, Free Quote, Privacy, Thank-you page).
+
+css/styles.css ........ All the colors, fonts, sizes and layout (how it looks).
+
+js/1-window-game.js ............ Home page squeegee game (scrub the whole window, then click Squeegee).
+js/2-page-tabs.js .............. Switches between tabs/pages (the #holiday, #home, #quote... links).
+js/3-holiday-checklist-window.js The Christmas checklist window game on the landing page.
+js/4-try-it-hand.js ............ The little "try it" hand hint that shows people how to play.
+js/5-form-tools.js ............. Shared form helpers: Web3Forms keys, phone dashes, email check,
+                                 calendar, time dropdown, Google Maps link, thank-you page.
+js/6-holiday-booking-form.js ... The holiday booking form on the landing page.
+js/7-free-quote-form.js ........ The free quote form on the main site.
+
+images/favicon.png ............. The little icon in the browser tab.
+images/windco-logo-snow.png .... WindCO logo with snow (main site header).
+images/windco-logo-gold-snow.png Gold snowy logo (holiday landing page).
+
+og-image.png .......... Preview picture when someone shares windco.co in a text/Facebook.
+robots.txt ............ Tells Google it may read the site.
+sitemap.xml ........... List of pages for Google.
+
+COMMON CHANGES
+--------------
+Web3Forms keys ........ js/5-form-tools.js  (WINDCO_KEY = quote form, WINDCO_HOLIDAY_KEY = holiday form)
+Phone / email ......... search index.html for 720-691-9193 or sethwindco1@gmail.com
+Deal date / wording ... search index.html for "December 18"
+Colors / sizes ........ css/styles.css
+
+Keep the folders (css, js, images) exactly as they are - index.html looks for them there.
